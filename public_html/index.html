@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Moto Buddy</title>
+
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+    <link href="/css/angular-ui-notification.min.css" rel="stylesheet">
+
+    <link href="/css/style.css" rel="stylesheet">
+
+
+   <script data-require="angular.js@1.2.x" src="https://code.angularjs.org/1.2.16/angular.js" data-semver="1.2.16"></script>
+   <script type="text/javascript" src="app.js"></script>
+   <script type="text/javascript" src="angular-ui-notification.min.js"></script>
+   
+  </head>
+<body ng-app="motobuddy" ng-controller="MotoCtrl">
+
+	<!--NAVBAR/HEADER-->
+	  <nav class="navbar navbar-light bg-faded">
+      
+        <button class="navbar-toggler hidden-md-up" type="button" data-toggle="collapse" data-target="#navbar-header" aria-controls="navbar-header">
+          &#9776;
+        </button>
+        <div class="collapse navbar-toggleable-sm" id="navbar-header">
+          <a class="navbar-brand" href="#"><img src="/images/logo.png"></a>
+          <ul class="nav navbar-nav pull-md-right">
+            <li class="nav-item active">
+              <a class="nav-link" href="#" ng-click="initializeTest(25, permitQuestions)">Permit Quiz<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" ng-click="initializeTest(permitQuestions.length , permitQuestions)">All Questions</a>
+            </li>
+          </ul>
+        
+        </div>
+      </nav>
+	<!--END NAVBAR/HEADER-->     
+
+	<!--APP CONTENT-->
+	<div class="container-fluid" id="quiz">
+		<div class="row">
+	  		<div class="col-sm-6  col-sm-offset-3">
+				<div class="card" ng-show="takingQuiz">
+				  
+				  <div class="card-block">
+				    <h4 class="card-title">Question {{activeQuestionIndex + 1 }} of {{ activeTest.length }}:</h4>
+				    <p class="card-text">{{ activeQuestion.Q }}</p>
+				  </div>
+				  <ul class="list-group list-group-flush">
+				    <li class="list-group-item" ng-repeat="answer in activeQuestion.A" ng-click="submitAnswer(answer)">{{ answer.answer }}</li>				  
+				  </ul>
+				  <div class="card-block">
+				    <p>Score: {{currentGrade}}
+				    Correct: {{activeScore.correct}} / {{ activeTest.length }}</p>
+				  </div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--APP CONTENT-->
+
+    <!-- jQuery first, then Bootstrap JS. -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
+
+  </body>
+</html>
+
