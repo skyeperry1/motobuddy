@@ -1,0 +1,10 @@
+.navbar-brand > img {
+	width:auto;
+	height:30px;
+}
+
+#quiz{margin-top:50px;}
+
+.bg-faded {
+    background-color: white;
+}
