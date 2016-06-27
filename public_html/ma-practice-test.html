@@ -15,6 +15,9 @@
     <link href="/css/style.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,700' rel='stylesheet' type='text/css'>
 
+	<script src="https://use.fontawesome.com/c292499d24.js"></script>
+
+
    <script data-require="angular.js@1.2.x" src="https://code.angularjs.org/1.2.16/angular.js" data-semver="1.2.16"></script>
    <script type="text/javascript" src="app.js"></script>
    <script type="text/javascript" src="angular-ui-notification.min.js"></script>
@@ -30,40 +33,40 @@
           &#9776;
         </button>
         <div class="collapse navbar-toggleable-sm" id="navbar-header">
-          <a class="navbar-brand" href="#"><img src="/images/logo.png"></a>    
+          <a class="navbar-brand" href="/"><img src="/images/logo.png"></a>    
         </div>
       </nav>
   <!--END NAVBAR/HEADER-->     
 
-    <div class="container-fluid" >
-      <div class="row">
-          <div class="col-sm-6  col-sm-offset-3" id="intro">
-          <h1>Welcome to Moto Buddy:
-          Your Massachusetts motorcycle Permit practice test and Licence guide. 
-          </h1>
-          <hr>
-          <p>Moto Buddy is a free online resource to guide you through the process of getting your Massachusetts Motorcycle (Class M) Permit and License. Our online motorcycle permit practice test features up-to-date questions from the 2016 
-          <a href="http://www.massrmv.com/LicenseandID/DrivingManuals/MotorcycleManual.aspx" target="blank">
-          Massachusetts Motorcycle Manual</a>
-          as well as the often-overlooked Junior Oporator Laws and Blood-Alcohol Questions.
-          </p>
-          <div class="col-md-12 text-xs-center"> 
-            <a href="/ma-practice-test.html" class="btn btn-primary btn-lg active " role="button">Start Permit Practice Test</a>
+  <!--APP CONTENT-->
+  <div class="container-fluid" id="quiz">
+    <div class="row">
+        <div class="col-sm-6  col-sm-offset-3">
+        <div class="card" ng-show="takingQuiz">
+          
+          <div class="card-block">
+            <h4 class="card-title">Question {{activeQuestionIndex + 1 }} of {{ activeTest.length }}:</h4>
+            <p class="card-text">{{ activeQuestion.Q }}</p>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item" ng-repeat="answer in activeQuestion.A" ng-click="submitAnswer(answer)"> <i class="fa fa-circle-o answer-icon" aria-hidden="true"></i>
+{{ answer.answer }}</li>         
+          </ul>
+          <div class="card-block">
+          <span class="glyphicons glyphicons-unchecked"></span>
+            <p class="text-xs-center">Score: {{currentGrade}}
+            Correct: {{activeScore.correct}} / {{ activeTest.length }}</p>
           </div>
         </div>
       </div>
-
-
-
-
     </div>
+  </div>
+ <!--APP CONTENT-->
 
-
-     <div id="ad-home-banner-btm"class="col-md-12 text-xs-center">
+      <div id="ad-home-banner-btm"class="col-md-12 text-xs-center">
           <a href="http://www.tkqlhce.com/click-8098825-10890554-1406505734000" target="_top" onmouseover="window.status='http://www.revzilla.com';return true;" onmouseout="window.status=' ';return true;">
             <img src="http://www.tqlkg.com/image-8098825-10890554-1406505734000" width="468" height="60" alt="" border="0"/></a>
      </div>
-
 
 
     <!-- jQuery first, then Bootstrap JS. -->
@@ -86,3 +89,5 @@
 
   </body>
 </html>
+
+

@@ -1,10 +1,57 @@
 .navbar-brand > img {
 	width:auto;
-	height:30px;
+	height:auto;
+
+}
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6{color:white;
+font-family: 'Roboto', sans-serif;}
+
+.h1, h1{
+	font-size: 35px;
+    letter-spacing: 0.1em;
+    line-height: 125%;
+    text-transform: uppercase;
+    font-weight:normal;
+}
+.answer-icon{margin-right:10px;}
+.card-block.h4,.card-block h4{color:black;}
+.card-block p {color:black;}
+.card li{cursor:pointer;}
+.card li:hover{background-color: #625b5b; color:white;}
+p{color: white;
+   font-family: "Roboto",sans-serif;
+   font-weight: lighter;
+   letter-spacing: 0.17em;
+   line-height: 200%;
+   }
+
+ .btn-primary.active, .btn-primary:active, .open > .btn-primary.dropdown-toggle{
+ 	background-color:#de3631; border-color:#de3631;font-weight:lighter; font-family: "Roboto",sans-serif; text-transform:uppercase;
+ 	margin-top: 25px;
+ }  
+
+ .btn-primary.active.focus, .btn-primary.active:focus, .btn-primary.active:hover, .btn-primary.focus:active, .btn-primary:active:focus, .btn-primary:active:hover, .open > .btn-primary.dropdown-toggle.focus, .open > .btn-primary.dropdown-toggle:focus, .open > .btn-primary.dropdown-toggle:hover{
+ 	background-color:#a32e2b;
+ 	border-color:#a32e2b;
+ }
+
+hr{border-color:white;}
+body {
+    background-color: #ee9836;
+    font-family: "Roboto",sans-serif;
 }
 
-#quiz{margin-top:50px;}
+#intro{
+	background-image: url("/images/ma-bg.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: inherit;
+    margin-top: 50px;
+}
 
 .bg-faded {
-    background-color: white;
+        background-color: #ee9836;
 }
+
+
+#ad-home-banner-btm{margin-top:50px;}
