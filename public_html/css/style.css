@@ -16,7 +16,7 @@ font-family: 'Roboto', sans-serif;}
 .answer-icon{margin-right:10px;}
 .card-block.h4,.card-block h4{color:black;}
 .card-block p {color:black;}
-.card li{cursor:pointer;}
+.card li{cursor:pointer; font-weight:lighter;}
 .card li:hover{background-color: #625b5b; color:white;}
 p{color: white;
    font-family: "Roboto",sans-serif;
